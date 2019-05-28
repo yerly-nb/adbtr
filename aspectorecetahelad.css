@@ -1,0 +1,351 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Montserrat Alternates', sans-serif;
+}
+
+html, body{
+    width: 100%;
+    height: 100vh;
+    padding: 0;
+    margin: 0px;
+    justify-content: center;
+    background-color: #f7f7f7;
+}
+
+/*Barra de desplasamiento*/
+body::-webkit-scrollbar{
+    width: 8px;
+    background: rgba(93, 109, 126,.5);
+    border-radius: 20px;
+}
+body::-webkit-scrollbar-thumb{
+    background: #8E44AD;
+    border-radius: 500px;
+}
+
+header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0 10px;
+    background: #e1bee7;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+nav {
+    padding: 0;
+}
+
+.logo {
+    float: left;
+    padding: 10px;
+    margin-left: 50px;
+}
+.icono{
+   position: absolute;
+    padding: 4px;
+}
+.imaf{
+    width: 50px;
+    height: 50px;
+}
+
+.logo a {
+    margin-bottom: 10px;
+    color: #f7f7f7;
+    font-weight: 100;
+    font-size: 25px;
+    letter-spacing: 10px;
+    text-decoration: none;
+    left: 50px;
+    font-family: 'Pacifico', cursive;
+}
+
+.logo a:hover{
+    color: #ec407a;
+}
+
+nav ul {
+    float: right;
+}
+
+nav ul li {
+    display: inline-block;
+    float: left;
+}
+
+nav ul li:not(:first-child) {
+    margin-left: 50px;
+}
+
+nav ul li:last-child {
+    margin-right: 30px;
+}
+
+nav ul li a {
+    display: inline-block;
+    outline: none;
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 20px;
+    letter-spacing: .5px;
+    font-weight: 600;
+}
+
+nav ul li a:hover{
+    color: #ec407a;
+}
+
+/*Fondo del encabezado*/
+.fondo{
+    top: 60px;
+    width: 100%;
+    height: 650px;
+    background-image: url(../img/img_recetas/mermeladas.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+    color: #fff;
+    text-align: center;
+}
+
+.text{
+    margin-top: 152px;
+}
+
+.titulo{
+    font-size: 65px;
+    font-weight: 100;
+}
+
+@media screen and (max-width: 864px) {
+    header.logo {
+        float: left;
+        padding: 15px;
+        margin-left: 50px;
+    }
+    .icono{
+       position: absolute;
+        padding: 4px;
+    }
+    .imaf{
+        width: 50px;
+        height: 50px;
+    }
+    
+    header{
+        box-shadow: -1px -4px 18px #000;
+        background: #e1bee7;
+        padding: 0 20px;
+    }
+
+    
+    .nav-wrapper {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background: #e1bee7;
+        opacity: 0;
+        transition: all 0.5s ease;
+    }
+
+    .nav-wrapper ul {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 100%;
+    }
+
+    .nav-wrapper ul li {
+        display: block;
+        float: none;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-wrapper ul li:nth-child(1) a {
+        transition-delay: 0.2s;
+    }
+
+    .nav-wrapper ul li:nth-child(2) a {
+        transition-delay: 0.4s;
+    }
+
+    .nav-wrapper ul li:nth-child(3) a {
+        transition-delay: 0.6s;
+    }
+
+    .nav-wrapper ul li:nth-child(4) a {
+        transition-delay: 0.8s;
+    }
+
+    .nav-wrapper ul li:not(:first-child) {
+        margin-left: 0;
+    }
+    
+    .nav-wrapper ul li a {
+        opacity: 0;
+        padding: 20px;
+        color: #f4f4f4;
+        font-size: 28px;
+        font-weight: 600;
+        letter-spacing: 4.2px;
+        transform: translateX(-30px);
+        transition: all 0.2s ease;
+    }
+    
+    .nav-wrapper ul li a:hover{
+        background: #e1bee7;
+        transition: 0.5s;
+        border: 2px solid #e1bee7;
+        padding: 20px 40px 40px 35px;
+        border-radius: 10px;
+        transition:background .1s,color 1s;
+        -webkit-transition:background .1s,color 1s;
+        -moz-transition:background .1s,color 1s;
+        -o-transition:background .1s,color 1s;
+        
+    }
+
+    .nav-btn {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        display: block;
+        width: 50px;
+        height: 48px;
+        cursor: pointer;
+        z-index: 9999;
+        border-radius: 50%;
+    }
+
+    .nav-btn i {
+        display: block;
+        width: 20px;
+        height: 2px;
+        background: #f4f4f4;
+        border-radius: 2px;
+        margin-left: 14px;
+    }
+
+    .nav-btn i:nth-child(1) {
+        margin-top: 16px;
+    }
+
+    .nav-btn i:nth-child(2) {
+        margin-top: 4px;
+        opacity: 1;
+    }
+
+    .nav-btn i:nth-child(3) {
+        margin-top: 4px;
+    }
+}
+
+#nav:checked + .nav-btn {
+    transform: rotate(45deg);
+}
+
+#nav:checked + .nav-btn i {
+    background: #f4f4f4;
+    transition: transform 0.2s ease;
+}
+
+#nav:checked + .nav-btn i:nth-child(1) {
+      transform: translateY(6px) rotate(180deg);
+}
+
+#nav:checked + .nav-btn i:nth-child(2) {
+    opacity: 0;
+}
+
+#nav:checked + .nav-btn i:nth-child(3) {
+    transform: translateY(-6px) rotate(90deg);
+}
+
+#nav:checked ~ .nav-wrapper {
+    z-index: 9990;
+    opacity: 1;
+}
+
+#nav:checked ~ .nav-wrapper ul li a {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.hidden {
+    display: none;
+}
+
+/*Contenedor padre del contenido*/
+.pcontenedor{
+    position: absolute;
+    width: 100%;
+    height: auto;
+    background: #f7f7f7;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
+}
+
+
+.titulo2{
+    text-align: center;
+    font-size: 48px;
+    color: #6a6a6a;
+    margin-top: 100px;
+    font-weight: 100;
+}
+
+/*Contenido del contenedor padre*/
+
+
+.pcontenedor .tarjeta{
+    width: 330px;
+    height: 430px;
+    border-radius: 8px;
+    box-shadow: 0 2px 2px rgba(0,0,0, 0.2);
+    overflow: hidden;
+    margin: 20px;
+    text-align: center;
+    transition: all 0.25s;
+}
+
+.pcontenedor .tarjeta:hover{
+    transform: translateY(-15px);
+    box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
+}
+
+.pcontenedor .tarjeta img{
+    width: 330px;
+    height: 220px;
+}
+
+.pcontendor .tarjeta h4{
+    font-weight: 600;
+}
+
+.pcontenedor .tarjeta p{
+    padding: 0 1rem;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.pcontenedor .tarjeta a{
+    font-weight: 500;
+    text-decoration: none;
+    color: #3498db;
+    
+}
+
+.pcontenedor .tarjeta a:hover{
+    color: #9c27b0;
+}

@@ -1,0 +1,369 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Montserrat Alternates', sans-serif;
+}
+
+/*Todo el cuerpo de la página*/
+html, body{
+    width: 100%;
+    height: 100vh;
+    padding: 0;
+    margin: 0px;
+    justify-content: center;
+    background-color: #f7f7f7;
+}
+
+/*Barra de desplasamiento*/
+body::-webkit-scrollbar{
+    width: 8px;
+    background: rgba(93, 109, 126,.5);
+    border-radius: 20px;
+}
+body::-webkit-scrollbar-thumb{
+    background: #8E44AD;
+    border-radius: 500px;
+}
+
+
+/*La barra del menú*/
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 0 10px;
+    background: #DCA1E7;
+    width: 100%;
+    z-index: 2;
+    box-shadow: -1px -4px 18px #000;
+    box-sizing: border-box;
+}
+
+/*El texto-boton de la barra del menú*/
+header .logo a{
+    color: #f7f7f7;
+    height: 50px;
+    line-height: 50px;
+    font-size: 25px;
+    letter-spacing: 8px;
+    float: left;
+    margin-left: 50px;
+    font-weight: 100;
+    text-decoration: none;
+    font-family: 'Pacifico', cursive
+}
+
+/*Cuando pasa el mause por el boton de la cabecera cambie de color*/
+header .logo a:hover{
+    color: #ec407a;
+}
+
+.icono{
+   position: absolute;
+}
+
+/*Para que el icono (la dona) tenga un tamaño*/
+.imaf{
+    width: 50px;
+    height: 50px;
+}
+
+/*Alineamiento de los botones de opción de la cabecera*/
+header nav{
+    float: right;
+}
+
+/**/
+header nav ul{
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+header nav ul li{
+    list-style: none;
+    position: relative;
+}
+
+/*Para darle diseño y orden al icono que importe*/
+header nav ul li.sub-menu:before{
+    content: '\f0d7';
+    font-family: fontAwesome;
+    color: #fff;
+    line-height: 50px;
+    position: absolute;
+    right: 5px;
+}
+
+/*lo de arriba pero este cambia a otro icono*/
+header nav ul li.active.sub-menu:before{
+    content: '\f0d8';
+}
+
+/*Para darle orden y lugar al sub-menú*/
+header nav ul li ul{
+    position: absolute;
+    left: 0;
+    background: #CF87DC;
+    display: none;
+    z-index: 33;
+}
+
+header nav ul li.active ul{
+    display: block;
+}
+
+/*Tamaño del sub-menú*/
+header nav ul li ul li{
+    display: block;
+    width: 200px;
+}
+
+/*Para el orden y diseño de los botones del menú*/
+header nav ul li a{
+    height: 50px;
+    line-height: 50px;
+    padding: 0 20px;
+    color: #fff;
+    text-decoration: none;
+    display: block;
+}
+
+header nav ul li a:hover,
+header nav ul li a.activate{
+    color: #fff;
+    background: #D888E7;
+}
+
+/*Diseño para el icono importado de google*/
+.menu-toggle{
+    color: #fff;
+    float: right;
+    line-height: 50px;
+    font-size: 24px;
+    cursor: pointer;
+    display: none;
+}
+
+
+/*Para el menú del celular*/
+@media screen and (max-width: 991px) {
+    header{
+        padding: 0 20px;
+        z-index: 32;
+    }
+    
+    .menu-toggle{
+        display: block;
+    }
+    
+    header nav{
+        position: fixed;
+        width: 100%;
+        height: calc(100vh - 50px);
+        background: #DCA1E7;
+        top: 50px;
+        left: -100%;
+        transition: 0.5s;
+        z-index: 33;
+    }
+    
+    header nav.active{
+        left: 0;
+    }
+    
+    header nav ul{
+        display: block;
+        text-align: center;
+        font-size: 24px;
+    }
+    
+    header nav ul li.active ul{
+        position: relative;
+        background: #CF87DC;
+    }
+    
+    header nav ul li ul li{
+        width: 100%;
+    }
+}
+
+/*Contenedor padre del contenido*/
+.pcontenedor{
+    position: absolute;
+    width: 100%;
+    height: auto;
+    background: #f7f7f7;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
+}
+
+
+.titulo2{
+    text-align: center;
+    font-size: 48px;
+    color: #6a6a6a;
+    margin-top: 100px;
+    font-weight: 100;
+}
+
+/*Contenido del contenedor padre*/
+
+
+.pcontenedor .tarjeta{
+    width:100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 2px rgba(0,0,0, 0.2);
+    overflow: hidden;
+    margin: 20px;
+    text-align: center;
+    transition: all 0.25s;
+    background: rgb(248, 249, 249);
+}
+
+.pcontenedor .tarjeta:hover{
+    transform: translateY(-15px);
+    box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
+}
+
+.contenedor-formularios {
+    padding: 40px;
+    max-width: 600px;
+    margin: 40px auto;
+    border-radius: 4px;
+}
+/*-------------------------------------------*/
+
+
+label {
+    position: absolute;
+    left: 20px;
+    color: #6a6a6a;
+    font-weight: 100;
+    transition: all 0.25s ease;
+    -webkit-backface-visibility: hidden;
+    pointer-events: none;
+    font-size: 20px; 
+}
+
+.req {
+    margin: 3px;
+    color: #F5B041;
+}
+
+label.active {
+    transform: translateY(-20px);
+    left: 10px;
+    font-size: 18px;
+    color: #DCA1E7;
+}
+
+.req {
+    opacity: 10;
+}
+
+label.highlight {
+    color: #D659EB;
+}
+
+input {
+    font-size: 25px;
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 5px 8px;
+    background: none;
+    background-image: none;
+    border: 2px solid #6a6a6a;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    color: #333;
+    border-radius: 0;
+    transition: all 0.5s ease;
+    border-radius: 8px;
+}
+
+textarea{
+    font-size: 18px;
+    width: 100%;
+    height: 200px;
+    min-height: 200px;
+    max-height: 200px;
+    max-width: 100%;
+    min-width: 100%;
+    padding: 5px 8px;
+    background: none;
+    background-image: none;
+    border: 2px solid #6a6a6a;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    color: #333;
+    border-radius: 0;
+    transition: all 0.5s ease;
+    border-radius: 8px;
+}
+
+input:focus{
+    outline: none;
+    border-color: #D659EB;
+}
+
+textarea:focus{
+    outline: none;
+    border-color: #D659EB;
+}
+
+.contenedor-input {
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.button {
+    border: 0;
+    outline: none;
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 2rem;
+    background: #AD48B7;
+    color: #a2b9a9;
+    transition: all .5s ease;
+    -webkit-appearance: none;
+}
+
+.button:hover{
+    background: #C555D9;
+    color: #f4f4f4;
+}
+.button:focus{
+    background: #55A4D9;
+}
+
+.button-block {
+    display: block;
+    width: 100%;
+}
+
+.forgot {
+    margin-top: -20px;
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+.contenedor-input select{
+    background: #f4f4f4;
+    display: flex;
+    margin-left: 100px;
+    height: 23px;
+}
+
+@media screen and (max-width: 400px) {
+    .contenedor-tabs {
+        
+        width: 100%;
+    }
+}

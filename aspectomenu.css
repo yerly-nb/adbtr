@@ -1,0 +1,489 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Montserrat Alternates', sans-serif;
+}
+
+/*Todo el cuerpo de la página*/
+html, body{
+    width: 100%;
+    height: 100vh;
+    padding: 0;
+    margin: 0px;
+    justify-content: center;
+    background-color: #f7f7f7;
+}
+
+/*Barra de desplasamiento*/
+body::-webkit-scrollbar{
+    width: 8px;
+    background: rgba(93, 109, 126,.5);
+    border-radius: 20px;
+}
+body::-webkit-scrollbar-thumb{
+    background: #8E44AD;
+    border-radius: 500px;
+}
+
+
+/*La barra del menú*/
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 0 10px;
+    background: #DCA1E7;
+    width: 100%;
+    z-index: 2;
+    box-shadow: -1px -4px 18px #000;
+    box-sizing: border-box;
+}
+
+/*El texto-boton de la barra del menú*/
+header .logo a{
+    color: #f7f7f7;
+    height: 50px;
+    line-height: 50px;
+    font-size: 25px;
+    letter-spacing: 8px;
+    float: left;
+    margin-left: 50px;
+    font-weight: 100;
+    text-decoration: none;
+    font-family: 'Pacifico', cursive
+}
+
+/*Cuando pasa el mause por el boton de la cabecera cambie de color*/
+header .logo a:hover{
+    color: #ec407a;
+}
+
+.icono{
+   position: absolute;
+}
+
+/*Para que el icono (la dona) tenga un tamaño*/
+.imaf{
+    width: 50px;
+    height: 50px;
+}
+
+/*Alineamiento de los botones de opción de la cabecera*/
+header nav{
+    float: right;
+}
+
+/**/
+header nav ul{
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+header nav ul li{
+    list-style: none;
+    position: relative;
+}
+
+/*Para darle diseño y orden al icono que importe*/
+header nav ul li.sub-menu:before{
+    content: '\f0d7';
+    font-family: fontAwesome;
+    color: #fff;
+    line-height: 50px;
+    position: absolute;
+    right: 5px;
+}
+
+/*lo de arriba pero este cambia a otro icono*/
+header nav ul li.active.sub-menu:before{
+    content: '\f0d8';
+}
+
+/*Para darle orden y lugar al sub-menú*/
+header nav ul li ul{
+    position: absolute;
+    left: 0;
+    background: #CF87DC;
+    display: none;
+    z-index: 33;
+}
+
+header nav ul li.active ul{
+    display: block;
+}
+
+/*Tamaño del sub-menú*/
+header nav ul li ul li{
+    display: block;
+    width: 200px;
+}
+
+/*Para el orden y diseño de los botones del menú*/
+header nav ul li a{
+    height: 50px;
+    line-height: 50px;
+    padding: 0 20px;
+    color: #fff;
+    text-decoration: none;
+    display: block;
+}
+
+header nav ul li a:hover,
+header nav ul li a.activate{
+    color: #fff;
+    background: #D888E7;
+}
+
+/*Diseño para el icono importado de google*/
+.menu-toggle{
+    color: #fff;
+    float: right;
+    line-height: 50px;
+    font-size: 24px;
+    cursor: pointer;
+    display: none;
+}
+
+
+/*Para el menú del celular*/
+@media screen and (max-width: 991px) {
+    header{
+        padding: 0 20px;
+        z-index: 32;
+    }
+    
+    .menu-toggle{
+        display: block;
+    }
+    
+    header nav{
+        position: fixed;
+        width: 100%;
+        height: calc(100vh - 50px);
+        background: #DCA1E7;
+        top: 50px;
+        left: -100%;
+        transition: 0.5s;
+        z-index: 33;
+    }
+    
+    header nav.active{
+        left: 0;
+    }
+    
+    header nav ul{
+        display: block;
+        text-align: center;
+        font-size: 24px;
+    }
+    
+    header nav ul li.active ul{
+        position: relative;
+        background: #CF87DC;
+    }
+    
+    header nav ul li ul li{
+        width: 100%;
+    }
+}
+
+/*Slider de imagenes*/
+
+slider{
+    top: 50px;
+    display: block;
+    width: 100%;
+    height: 80%;
+    background-color: #1f1f1f;
+    overflow: hidden;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+slider > * {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: #f8f8f8;
+    animation: slide 12s infinite;
+    overflow: hidden;
+}
+
+slide:nth-child(5){
+    left: 0;
+    animation-delay: -1s;
+    background-image: url(pan2.jpg);
+    background-size: cover;
+    background-position: center; 
+}
+
+slide:nth-child(2){
+    animation-delay: 5s;
+    background-image: url(pasteles2.jpg);
+    background-size: cover;
+    background-position: center; 
+}
+
+slide:nth-child(3){
+    animation-delay: 7s;
+    background-image: url(mermelada.jpg);
+    background-size: cover;
+    background-position: center; 
+}
+
+slide:nth-child(4){
+    left: 0;
+    animation-delay: 9s;
+    background-image: url(fondo.jpg);
+    background-size: cover;
+    background-position: center; 
+}
+
+slide:nth-child(1){
+    animation-delay: 14s;
+    background-image: url(helados.jpg);
+    background-size: cover;
+    background-position: center; 
+}
+
+slide p{
+    font-size: 60px;
+    text-align: center;
+    width: 100%;
+    margin-top: 100px;
+    color: #fff;
+}
+
+@keyframes slide{
+    0%  { left: 100%; width: 100%; }
+    5%  { left: 0%; }
+    25% { left: 0%;}
+    30% { left: -100%; width: 100%; }
+    30.0001% { left: -100%; width: 0%; }
+    100% { left: 100%; width: 0%; }
+}
+
+/*Diseño y orden del contenedor dondé estará el contenido*/
+.cpadre{
+    position: relative;
+    width: 100%;
+    height: auto;
+    background: #f7f7f7;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
+    
+}
+
+
+.titulo1{
+    text-align: center;
+    font-size: 38px;
+    color: #6a6a6a;
+    margin-top: 100px;
+    font-weight: 100;
+}
+
+/*Contenedores para contenido*/
+.contenedor{
+    background: #23443;
+    width: 265px;
+    height: 265px;
+    float: left;
+}
+
+.img-contenedor{
+    position: relative;
+    overflow: hidden;
+}
+
+
+.contenedor:hover .texto{
+    top: 0;
+}
+
+.contenedor:hover .loes{
+    top: 1000px;
+}
+.loes{
+    top: 180px;
+    position: absolute;
+    color: #fff;
+    font-size: 30px;
+    background: rgba(0,0,0,.7);
+    width: 265px;
+    transition: 300ms;
+}
+
+.loes p{
+    margin-left: 15px;
+}
+
+.texto{
+    position: absolute;
+    top: 100%;
+    width: 265px;
+    height: 265px;
+    background: rgba(0,0,0,.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 300ms;
+    
+}
+
+.boton-ir{
+    padding: 1rem 3rem;
+    background: transparent;
+    border-radius: 5px;
+    border: 1px solid #CF52E4;
+    color: #CF52E4;
+    text-decoration: none;
+    font-size: 32px;
+}
+
+.boton-ir:hover{
+    background: #CF52E4;
+    color: #fff;
+    transition: all 300ms;
+}
+
+.sep{
+    width: 40%;
+    background: rgba(245, 159, 82, 0.8); 
+}
+
+.sep h3{
+    font-size: 32px;
+    margin-left: 40px;
+    color: #f7f7f7;
+    font-weight: 100;
+}
+
+.sep2{
+    background: rgba(245, 159, 82, 0.8);
+    width: 50%;
+    position: relative;
+    z-index: 9999;
+}
+
+.sep2 h3{
+    font-size: 32px;
+    margin-left: 40px;
+    color: #f7f7f7;
+    font-weight: 100;
+}
+/*--------------------------------*/
+
+.search-box {
+    position:  absolute;
+    left: 77%;
+    background: rgba(245, 159, 82, 0.8);
+    height: 50px;
+    border-radius: 40px;
+    padding: 5px;
+}
+
+.search-box:hover > .search-txt {
+    width: 240px;
+    padding: 0 6px;
+}
+
+.search-box:hover > .search-btn {
+    background: #f9f9f9;
+    color: rgba(245, 159, 82);;
+}
+
+.search-btn {
+    color: #f9f9f9;
+    float: right;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(245, 159, 82, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s;
+    color: white;
+    cursor: pointer;
+}
+
+.search-btn > i {
+    font-size: 30px;
+}
+
+.search-txt {
+    border: none;
+    background: none;
+    outline: none;
+    float: left;
+    padding: 0;
+    color: #f7f7f7;
+    font-size: 16px;
+    transition: 0.4s;
+    line-height: 40px;
+    width: 0px;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 991px) {
+    .sep{
+        position: absolute;
+        width: 100%;
+        
+    }
+    
+    .sep h3{
+        margin-left: 10px;
+    }
+    
+    .search-box {
+        left: 38%;
+        background: rgba(245, 159, 82, 0.8);
+        height: 50px;
+        border-radius: 50px;
+        padding: 5px;
+        z-index: 100;
+    }
+
+    .search-box:hover > .search-txt {
+        width: 160px;
+        padding: 0 6px;
+    }
+    
+    .search-btn {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: rgba(245, 159, 82, 0.9);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 0.4s;
+        color: white;
+        cursor: pointer;
+    }
+
+    .search-btn > i {
+        font-size: 30px;
+    }
+
+    .search-txt {
+        border: none;
+        background: none;
+        outline: none;
+        float: left;
+        padding: 0;
+        color: #f7f7f7;
+        font-size: 16px;
+        transition: 0.4s;
+        line-height: 40px;
+        width: 0px;
+        font-weight: bold;
+    }
+}

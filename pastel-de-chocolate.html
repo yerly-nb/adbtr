@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+	    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+		<meta charset="utf-8">
+		<title>Pastel de cholcolate</title>
+        <link rel="icon" type="image/jpg" href="dns.png">
+		<link rel="stylesheet" href="estilo-mermelada-fresa.css">
+		<link href="https://fonts.googleapis.com/css?family=Montserrat+Alternates" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+        <link href="http://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+	</head>
+	
+	<header>
+            <div class="icono">
+                <img class="imaf" src="dns.png">
+            </div>
+            <div class="logo"><a href="menu.html">DERMUT</a></div>
+            
+            <nav>
+                <ul>
+                    <li><a href="menu.html">Inicio</a></li>
+                    <li class="sub-menu"><a href="#">Menús</a>
+                        <ul>
+                            <li><a href="menu-completo.html">Menú de postres</a></li>
+                            <li><a href="menu-completoB.html">Menú de bebidas</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            
+            <div class="menu-toggle"><i class="fa fa-bars" aria-hidden="true"></i></div>
+    </header>
+    <body>
+     <div class="tet"><h2 class="in">Pastel de chocolate.</h2></div>
+      <div class="cont-img">
+          <img src="pasteldechocolate.jpg">
+      </div>
+       <div class="pcontenedor">
+           <div class="contenedor">
+               <div class="flecha"><h3 class="sub-titulos">Ingredientes:</h3></div>
+                    <ul>
+                        <li><p class="parrafo">50 gramos nuez.</p></li>
+                        <li><p class="parrafo">22 gramos Cocoa.</p></li>
+                        <li><p class="parrafo">1 taza leche evaporada (de su preferencia).</p></li>
+                        <li><p class="parrafo">1 taza Azúcar.</p></li>
+                        <li><p class="parrafo">1 cucharadita polvo para hornear.</p></li>
+                        <li><p class="parrafo">1.5 Tazas Harina de trigo.</p></li>
+                        <li><p class="parrafo">2 barras Chocolate semiamargo 150 g c/u. </p></li>
+                        <li><p class="parrafo">2 barras Mantequilla (90 g) a temperatura ambiente.</p></li>
+                        <li><p class="parrafo">2 tazas Crema para batir.</p></li>
+                        <li><p class="parrafo">5 piezas Huevo.</p></li>
+                    </ul>
+                    <div class="flecha"><h3 class="sub-titulos">Método de preparación:</h3></div>
+                    <div class="texto-lrg">
+                        <ul>
+                            <li>Pre-calentar el horno a 180°C Bate la mantequilla hasta que esponje y agrega el azúcar hasta que se integre. Añade los huevos uno a uno y, sin dejar de batir, la Leche Evaporada CARNATION® CLAVEL®. Incorpora poco a poco la harina previamente pasada por un colador junto con el polvo para hornear y la cocoa, sigue batiendo hasta que se integre. Vacía la mezcla en un molde redondo para pastel, engrasado y enharinado, y hornea por 1 hora. Desmolda, deja enfriar y corta a la mitad.</li>
+                            <li>Para el relleno, coloca en un recipiente una taza de crema para batir, una barra de chocolate semi amargo y la nuez; derrite a baño María hasta que se funda. Cubre con papel aluminio y refrigera por 30 minutos; retira del refrigerador y bate hasta que doble su volumen. Unta el relleno sobre una mitad de pastel y cubre con la otra mitad.</li>
+                            <li>Para la cobertura, coloca en un recipiente una taza crema para batir y una barra de chocolate semi amargo, derrite a baño María, cubre el pastel y decora con fruta.</li>
+                            <li>Puedes sustituir el chocolate amargo por semi-amargo o chocolate con leche.</li>
+                            <li>NOTA:</li>
+                            <li>Si se adquiere chocolate amargo de calidad con un alto contenido de cacao, el nivel nutritivo es alto. Contiene una cantidad considerable de fibra soluble y está repleto de minerales. El chocolate amargo está lleno de componentes orgánicos que son biológicamente activos y funcionan como antioxidantes. Esto incluye polifenoles, flavonoides y catequinas, entre otros. Además, contiene estimulantes.</li>
+                            
+             </ul>
+          </div>
+                    <ul>
+                    </div>
+                </div>
+       </div>
+       
+        <script src="http://code.jquery.com/jquery-3.3.1.js"></script>
+        <script type="text/javascript">
+        $(document).ready(function(){
+            $('.menu-toggle').click(function(){
+                $('nav').toggleClass('active')
+            })
+
+            $('ul li').click(function(){
+                $(this).siblings().removeClass('active');
+                $(this).toggleClass('active');
+            })
+        })
+        </script>
+    </body>
+	
+</html>
